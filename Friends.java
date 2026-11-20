@@ -6,21 +6,25 @@ public class Friends {
 
    // declare and initialize the ArrayList
    // declare and initialize the Random class
-    ArrayList<String> name = new ArrayList<String>();
-    Random random = new Random();
+    ArrayList<Name> friends = new ArrayList<Name>();
+    Random r = new Random();
    
    
    // the constructor
    public Friends () {
-    name.add("John Silksong");
-    name.add("Queen of Hearts");
-    name.add("John Hollow Knight");
+    friends.add(new Name("Sean", "Morris"));
+    friends.add(new Name("Zade", "Morris"));
+    friends.add(new Name("kaelin", "Morris"));
    }
    
-   public void printRandomFriend(){
+   public Name printRandomFriend(){
        //return a random Name object from the List
-       String randomFriend = name.get(random.nextInt(name.size()));
-       System.out.println(randomFriend);
+       int x = r.nextInt(friends.size());
+       return friends.get(x);
+    }
+    public Name getRadomFriend(){
+        int x = (int)(Math.random() * friends.size());
+        return friends.get(x);
     }
    
   
